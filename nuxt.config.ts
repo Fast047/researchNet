@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
   buildDir: '.nuxt',
   build: {
-    transpile: ['echarts', 'zrender', 'echarts-leaflet', 'leaflet'],
+    transpile: ['echarts', 'tslib'],
   },
   app: {
     head: {
