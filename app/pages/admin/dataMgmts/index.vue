@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-wrap gap-3 items-end p-4 rounded-t-xl border border-slate-100" style="background: var(--color-card);">
+    <div class="flex flex-wrap gap-3 items-end p-4 rounded-t-xl border border-slate-100 bg-[var(--color-card)]">
       <div class="flex flex-col gap-1.5">
         <label class="text-[10px] font-bold uppercase text-slate-500 ml-1">ค้นหา</label>
         <InputText v-model="filterCond.keywords" type="text" placeholder="ค้นหาโครงการ สถาบัน PI..." class="w-92" size="small"  />

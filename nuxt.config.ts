@@ -142,6 +142,9 @@ export default defineNuxtConfig({
         target: 'esnext',
       },
     },
+    externals: {
+      inline: ['tslib']
+    }
   },
   vite: {
     build: {

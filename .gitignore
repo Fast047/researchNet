@@ -18,6 +18,13 @@ logs
 .fleet
 .idea
 
+#yarn
+.yarn
+yarn.lock
+yarn-error.log
+
+instakk-state.gz
+
 # Local env files
 .env
 .env.*

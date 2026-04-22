@@ -1,8 +1,11 @@
 <template>
 <div>
-    <div class="page on" id="page-login">
-        <div class="login-bg">
-            <div class="login-grid"></div>
+    <div class="page on bg-[var(--color-void)] flex items-center justify-center" id="page-login">
+        <div class="fixed inset-0 pointer-events-none">
+            <!-- Radial Glow Background -->
+            <div class="absolute inset-0 [background:radial-gradient(ellipse_60%_70%_at_30%_50%,rgba(6,182,212,0.07)_0%,transparent_70%),radial-gradient(ellipse_50%_60%_at_70%_50%,rgba(129,140,248,0.06)_0%,transparent_70%)]"></div>
+            <!-- Grid Background with the Radial Mask from your snippet -->
+            <div class="absolute inset-0 [background-image:linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(80%_80%,#000_0%,#0000_100%)]"></div>
         </div>
         <div class="login-card">
             <div class="login-header">
@@ -111,33 +114,6 @@ const loginAs = (role: string) => {
 </script>
 
 <style scoped>
-#page-login {
-    background: var(--color-void);
-    align-items: center;
-    justify-content: center
-}
-
-.login-bg {
-    position: fixed;
-    inset: 0;
-    pointer-events: none
-}
-
-.login-bg::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(6, 182, 212, .07) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 70% 50%, rgba(129, 140, 248, .06) 0%, transparent 70%)
-}
-
-.login-grid {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(6, 182, 212, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, .03) 1px, transparent 1px);
-    background-size: 48px 48px
-}
-
 .login-card {
     position: relative;
     z-index: 5;
