@@ -58,7 +58,7 @@ export default defineNuxtConfig({
   },
   fonts: {
     families: [
-      {
+      
         name: 'IBM Plex Mono',
         provider: 'google',
         weights: [400, 500, 600],
@@ -142,6 +142,7 @@ export default defineNuxtConfig({
         target: 'esnext',
       },
     },
+    preset: 'vercel',
     externals: {
       inline: ['tslib']
     }
