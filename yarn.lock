@@ -9216,6 +9216,7 @@ __metadata:
     tailwind-merge: "npm:^3.5.0"
     tailwindcss: "npm:^4.2.2"
     tailwindcss-primeui: "npm:^0.6.1"
+    tslib: "npm:^2.8.1"
     vee-validate: "npm:^4.15.1"
     vue: "npm:^3.5.31"
     vue-echarts: "npm:^8.0.1"
