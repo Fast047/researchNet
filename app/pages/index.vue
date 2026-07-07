@@ -136,10 +136,8 @@ definePageMeta({
     layout: "main-layout",
 });
 const router = useRouter();
-const { isLight, setDark, setLight } = useTheme();
-if(isLight.value) setDark();
+const { isLight } = useTheme();
 const overView = () => {
-    if(!isLight.value) setLight();
     router.push('/admin/overview');
 }
 </script>

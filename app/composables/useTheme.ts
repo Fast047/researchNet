@@ -1,36 +1,40 @@
 // composables/useTheme.ts
 export const useTheme = () => {
   const colorMode = useCookie<'light' | 'dark'>('rs-theme', {
-    default: () => 'dark'
+    default: () => 'light'
   })
 
-  // ✅ ใช้ computed แทน ref
+  // Force cookie to 'light'
+  if (colorMode.value !== 'light') {
+    colorMode.value = 'light'
+  }
+
+  // ✅ Force light mode
   const isLight = computed({
-    get: () => colorMode.value === 'light',
-    set: (val: boolean) => {
-      colorMode.value = val ? 'light' : 'dark'
+    get: () => true,
+    set: () => {
+      colorMode.value = 'light'
     }
   })
 
   const toggleTheme = () => {
-    isLight.value = !isLight.value
+    // Locked to light theme
   }
 
   const setLight = () => {
-    isLight.value = true
+    colorMode.value = 'light'
   }
 
   const setDark = () => {
-    isLight.value = false
+    colorMode.value = 'light'
   }
 
-    // จัดการการเพิ่ม/ลด class 'dark' บน html element เมื่อค่าเปลี่ยน
+  // จัดการการเพิ่ม/ลด class 'dark' บน html element เมื่อค่าเปลี่ยน
   if (import.meta.client) {
-    watch(isLight, (val) => {
-      document.documentElement.classList.toggle('dark', !val)
+    watch(isLight, () => {
+      document.documentElement.classList.toggle('dark', false)
     }, { immediate: true })
   }
-
 
   return {
     isLight,
